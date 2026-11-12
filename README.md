@@ -267,24 +267,60 @@ void printReverse(const Node *head) {
 
 # include <stdio.h>
 
-# include <string.h>
+/* P.A */
 
-int isPalindrome(const char str[], int start, int end) {
+int mystery(int n) {
 
-    if (start >= end) {
+    if (n < -1) return 1;
 
-        return 1;
-
-    }
-
-    if (str[start] != str[end]) {
-
-        return 0;
-
-    }
-
-    return isPalindrome(str, start + 1, end - 1);
+    return n + mystery(n - 2);
 
 }
-\*
+
+/* P.B */
+
+void display(int n) {
+
+    if (n == 0) return;
+
+    printf("%3d", n);
+
+    display(n - 1);
+
+    printf("%3d", n);
+
+}
+
+/* P.C */
+
+int factorial(int n) {
+
+    if (n <= 0) return 1;
+
+    return n * factorial(n - 1);
+
+}
+
+int main() {
+
+    /* Test cases
+    \*
+
+    printf("Mystery(7): %d\n", mystery(7));
+
+    printf("Display(3): ");
+
+    display(3);
+
+    printf("\n");
+
+    printf("Factorial(5): %d\n", factorial(5));
+
+    
+return 0;
+
+}
+
+
+
 
