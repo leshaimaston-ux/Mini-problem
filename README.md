@@ -1,3 +1,5 @@
+/* P1 
+\*
 #include <studio.h>
 void countdown(int n) {
 
@@ -50,16 +52,7 @@ int main() {
     return 0;
 
     include <stdio.h>
-
-/**
-
-  sumDigits: Calculates the sum of digits using recursion.
-
-  1. Base Case: If n < 10, the sum is just the number itself.
-
-  2. Recursive Case: Add the last digit (n % 10) to the result
-  of sumDigits(n / 10).
-
+ /* P2
  */
 
 int sumDigits(int n) {
@@ -98,7 +91,200 @@ int main() {
 
 }
 
+ /*P3
+ \*
+# include <stdio.h>
 
+# include <string.h>
+
+int isPalindrome(const char str[], int start, int end) {
+
+    if (start >= end) {
+
+        return 1;
+
+    }
+
+
+
+    if (str[start] != str[end]) {
+
+        return 0;
+
+    }
+
+    return isPalindrome(str, start + 1, end - 1);
 
 }
+
+/* P4
+\*
+
+int countChar(const char str[], char target) {
+
+    // Base case: end of string
+
+    if (str[0] == '\0') {
+
+        return 0;
+
+    }
+
+    // Recursive case: check current and move to the next character
+
+    int found = (str[0] == target) ? 1 : 0;
+
+    return found + countChar(str + 1, target);
+
+}
+
+/*P5
+\*
+
+int recursiveMax(const int arr[], int size) {
+
+    // Base case: only one element
+
+    if (size == 1) {
+
+        return arr[0];
+
+    }
+
+
+
+    // Recursive case: compare current with the max of the rest
+
+    int maxOfRest = recursiveMax(arr + 1, size - 1);
+
+    return (arr[0] > maxOfRest) ? arr[0] : maxOfRest;
+
+}
+
+/*P6
+\*
+int recursiveMax(const int arr[], int size) {
+
+    // Base case: only one element
+
+    if (size == 1) {
+
+        return arr[0];
+
+    }
+
+
+
+    // Recursive case: compare current with the max of the rest
+
+    int maxOfRest = recursiveMax(arr + 1, size - 1);
+
+    return (arr[0] > maxOfRest) ? arr[0] : maxOfRest;
+
+}
+
+/*P7
+\*
+
+int binarySearch(const int arr[], int left, int right, int target) {
+
+    if (left > right) {
+
+        return -1;
+
+    }
+
+    int mid = left + (right - left) / 2;
+
+    if (arr[mid] == target) {
+
+        return mid;
+
+    }
+
+    if (arr[mid] > target) {
+
+        return binarySearch(arr, left, mid - 1, target);
+
+    } else {
+
+        return binarySearch(arr, mid + 1, right, target);
+
+    }
+
+}
+
+/*P8
+\*
+
+int countNodes(const Node *head) {
+
+    // Base case: empty list
+
+    if (head == NULL) return 0;
+
+    // Recursive case: 1 + count of rest of list
+
+    return 1 + countNodes(head->next);
+
+}
+
+/* Task B
+\*
+
+int sumNodes(const Node *head) {
+
+    // Base case: empty list
+
+    if (head == NULL) return 0;
+
+    // Recursive case: current data + sum of rest
+
+    return head->data + sumNodes(head->next);
+
+}
+
+/* Task C
+\*
+void printReverse(const Node *head) {
+
+    // Base case: empty list
+
+    if (head == NULL) return;
+
+    // Recursive step: call on next first to reach end
+
+    printReverse(head->next);
+
+    // Print after the recursive call returns (backtracking)
+
+    printf("%d ", head->data);
+
+}
+
+/*P9
+\*
+
+# include <stdio.h>
+
+# include <string.h>
+
+int isPalindrome(const char str[], int start, int end) {
+
+    if (start >= end) {
+
+        return 1;
+
+    }
+
+    if (str[start] != str[end]) {
+
+        return 0;
+
+    }
+
+    return isPalindrome(str, start + 1, end - 1);
+
+}
+\*
 
